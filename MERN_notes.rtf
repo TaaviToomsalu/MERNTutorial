@@ -1,0 +1,258 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red66\green179\blue255;\red23\green23\blue23;\red202\green202\blue202;
+\red212\green214\blue154;\red194\green126\blue101;\red140\green211\blue254;\red70\green137\blue204;\red183\green111\blue179;
+\red194\green85\blue60;\red35\green39\blue48;\red150\green150\blue150;\red98\green115\blue149;\red193\green193\blue193;
+\red125\green141\blue87;\red137\green112\blue139;\red193\green152\blue86;\red98\green115\blue149;\red35\green39\blue48;
+\red150\green150\blue150;\red137\green112\blue139;\red194\green85\blue60;\red125\green141\blue87;\red193\green152\blue86;
+\red202\green202\blue202;\red136\green93\blue48;}
+{\*\expandedcolortbl;;\cssrgb\c30980\c75686\c100000;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c86275\c86275\c66667;\cssrgb\c80784\c56863\c47059;\cssrgb\c61176\c86275\c99608;\cssrgb\c33725\c61176\c83922;\cssrgb\c77255\c52549\c75294;
+\cssrgb\c81176\c41569\c29804;\cssrgb\c18431\c20392\c24706;\cssrgb\c65490\c65490\c65490;\cssrgb\c45882\c52941\c65098;\cssrgb\c80000\c80000\c80000;
+\cssrgb\c56078\c61569\c41569;\cssrgb\c60784\c52157\c61569;\cssrgb\c80392\c65882\c41176;\cssrgb\c45882\c52941\c65098;\cssrgb\c18431\c20392\c24706;
+\cssrgb\c65490\c65490\c65490;\cssrgb\c60784\c52157\c61569;\cssrgb\c81176\c41569\c29804;\cssrgb\c56078\c61569\c41569;\cssrgb\c80392\c65882\c41176;
+\cssrgb\c83137\c83137\c83137;\cssrgb\c60784\c43922\c24706;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15580\viewh12380\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 https://www.youtube.com/watch?v=I7EDAR2GRVo\
+\
+Mongodb.com	connected with google account\
+\
+LearningMern database user taavit\
+Pass DBuseR5\
+\
+Cluster-Database (?)\
+\
+MERN uses MongoDB as the database management system.\
+We create instance of our database in the cloud. \
+\
+\
+In server folder\
+Npm init -y\
+\
+Cors - dependency that is crucial to make connection between react and database\
+\
+npm install express mongoose cors nodemon\
+\
+Added my IP address to Mongo db. \
+It will only allow us to have connection to this DB if we are currently in this IP address\
+\
+11:29 \
+In package.json add to scripts field\
+\'93Start\'94: \'93nodemon index.js\'94\
+Now run the server with nom start\
+\
+\
+14:16\
+Connect using MongoDB Compass\
+For to be able to write code that\'92s able to alter the values in the database. \
+But we want to actually see the data in the database in our comp. \
+We do that by using software MongoDB compass. \
+\
+Right now we connect to Mongodb compass, connecting to actual server a bit different. \
+\
+Into app.js copy connect to app string you get from website. \
+In mongoodedb create database. \
+The url i connect to aplication doesnt have db name in it anymore (25.okt 2022)\
+			I had to put the db name in myseld, it just didnt have template.. Yay\
+\
+\
+What we want to do is create collections and models inside of our project. \
+\
+\
+we created collection called users\
+We want to set the fields and values inside that collection. \
+\
+\
+\
+\
+19:02\
+In server create folder models\
+In there we create files that represent different collections(tables) that we have in our database. \
+If we have a users collection we create a users file. \
+In Users.js we are going to define the structure of this model. \
+\
+Into mongoose.Schema we create an object that defines all the fields and values this schema should contain. \
+\
+In documentation is listed all the stuff you can add to each of your fields. \
+\
+The mongoose.model, first argument is the collection. If you haven\'92t created that one and you are running your application, it will automatically create it inside of your database system. \
+\
+24:18\
+Api endpoints or requests - bridges that connect frontend request with database and send back information. \
+\
+With app.get callback function, with req we can get information from the front end\
+And with res we can send information from the back end to the front end. \
+\
+creating data manually into table users. json, keys have to be strings. \
+\
+\
+\
+28:00\
+If you put empty object into UserModel.find it will return back all the data inside of the collection. After it finds all the data it calls the callback function. \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+app\cf4 .\cf5 get\cf4 (\cf6 "/getUsers"\cf4 , (\cf7 req\cf4 , \cf7 res\cf4 ) \cf8 =>\cf4 \{\cb1 \
+\cb3     \cf7 UserModel\cf4 .\cf5 find\cf4 (\{\}, (\cf7 err\cf4 , \cf7 result\cf4 ) \cf8 =>\cf4  \{\cb1 \
+\cb3         \cf9 if\cf4  (\cf7 err\cf4 ) \{\cb1 \
+\cb3             \cf7 res\cf4 .\cf5 json\cf4 (\cf7 err\cf4 );\cb1 \
+\cb3         \}\cf9 else\cf4  \{\cb1 \
+\cb3             \cf7 res\cf4 .\cf5 json\cf4 (\cf7 result\cf4 );\cb1 \
+\cb3         \}\cb1 \
+\cb3     \});\cb1 \
+\cb3 \});\cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \
+\
+json() function is used for transforming result into json and sending back json data to our front end. It will send back the result that we got from our table. \
+\
+res.json(result) 	-send back the result\
+\
+\
+30:25 Thunder Client\
+Collection(table) is inside of a database\
+\
+Had two errors: require function used . Instead of / and password had wrong letter. \
+\
+\
+31:40 Post request, request to add data to our database. \
+Body object, data inputted into front end, will exist in req callback function parameter.\
+We assume the front end will send some sort of body object, we will call it user. \
+In order to add the data to our model(collection) , we create var newUser. \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf10 \cb11 \expnd0\expndtw0\kerning0
+app\cf12 .\cf13 post\cf14 (\cf12 '\cf15 createUser\cf12 ',\cf14  \cf16 async\cf14  \cf12 (\cf17 req\cf12 ,\cf14  \cf17 res\cf12 )\cf14  \cf16 =>\cf14  \cf12 \{\cf14 \cb1 \
+\cb11     \cf16 const\cf14  \cf10 user\cf14  \cf4 =\cf14  \cf10 req\cf12 .\cf10 body\cf12 ;\cf14 \cb1 \
+\cb11     \cf16 const\cf14  \cf10 newUser\cf14  \cf4 =\cf14  \cf8 new\cf14  \cf13 UserModel\cf14 (\cf10 user\cf14 )\cf12 ;\cf14 \cb1 \
+\cb11     \cf16 await\cf14  \cf10 newUser\cf12 .\cf13 save\cf14 ()\cf12 ;\cf14 \cb1 \
+\
+\cb11     \cf10 res\cf12 .\cf13 json\cf14 (\cf10 user\cf14 )\cb1 \
+\cf12 \cb11 \}\cf14 )\cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \
+Creating a post request in Thunder Client. When we use req.body in code, we should get that body. \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf10 \cb11 \expnd0\expndtw0\kerning0
+app\cf12 .\cf13 use\cf14 (\cf10 express\cf12 .\cf13 json\cf14 ())\cf12 ;\cf14 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 The body in req is json, but we need object to save it to user. We need to parse the json. We dont need to do that manually. \
+If you dont do that then any requsts that involve a body will give an error. \
+\
+\
+Got an error. Didn\'92t add / in 
+\f1\fs24 \cf10 \cb11 \expnd0\expndtw0\kerning0
+app\cf12 .\cf13 post\cf14 (\cf12 '\cf15 /createUser\cf12 '\cf14 \cb1 \
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 This is it for the back end. We need to connect it in front end using React. \
+\
+37:41\
+Const cars = require(\'91cars\'92);\
+This allows us to connect our API to our React front end. \
+\
+Open another terminal. One will run server, another React. \
+\
+npx create-react-app \
+npm i axios 	(allows to do API requests very simply without having to use the fetch API that exists inside of JavaScript)\
+\
+Npm start	starts React\
+\
+In src folder delete setupTests.js logo.svg index.css App.test.js\
+In index.js delete import css statement. \
+\
+In App.js delete everything inside App className div, also logo import statement. \
+\
+We can start developing our front end. \
+\
+We want to test out our two API endpoints that we created. \
+\
+In React, make an API request to back end. And then store that data inside of a state. \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf12 \cb11 \expnd0\expndtw0\kerning0
+import\cf14  \cf12 \{\cf14  \cf10 useState\cf14  \cf12 \}\cf14  \cf12 from\cf14  \cf12 '\cf15 react\cf12 '\cf14  \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 If not familiar with that hook, he has a video where he goes over all the hooks in React.  !!!!!!!!\
+\
+We create a list that is going to be a list. \
+\
+We want to automatically make an API call to our back end and populate state listOfUsers with the information. \
+\
+44:23\
+\
+\
+47:34\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf18 \cb19 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec18 useEffect\cf14 \strokec14 (\cf20 \strokec20 ()\cf14 \strokec14  \cf21 \strokec21 =>\cf14 \strokec14  \cf20 \strokec20 \{\cf14 \cb1 \strokec14 \
+\cb19     \cf22 \strokec22 Axios\cf20 \strokec20 .\cf18 \strokec18 get\cf14 \strokec14 (\cf20 \strokec20 '\cf23 \strokec23 http://localhost:3001/getUsers\cf20 \strokec20 '\cf14 \strokec14 )\cb1 \
+\cb19   \cf20 \strokec20 \},\cf14 \strokec14  [])\cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 The URL is the endpoint for our API, its where its running. \
+This returns a promise, so .then((response))\
+This is the same response from server index.js\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf22 \cb19 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 response\cf20 \strokec20 .\cf22 \strokec22 data\cf14 \cb1 \strokec14 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 This is how we access our data from the API request. \
+\
+So all together:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf18 \cb19 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec18 useEffect\cf14 \strokec14 (\cf20 \strokec20 ()\cf14 \strokec14  \cf21 \strokec21 =>\cf14 \strokec14  \cf20 \strokec20 \{\cf14 \cb1 \strokec14 \
+\cb19     \cf22 \strokec22 Axios\cf20 \strokec20 .\cf18 \strokec18 get\cf14 \strokec14 (\cf20 \strokec20 '\cf23 \strokec23 http://localhost:3001/getUsers\cf20 \strokec20 '\cf14 \strokec14 )\cf20 \strokec20 .\cf18 \strokec18 then\cf14 \strokec14 (\cf20 \strokec20 (\cf24 \cb19 \strokec24 response\cf20 \cb19 \strokec20 )\cf14 \strokec14  \cf21 \strokec21 =>\cf14 \strokec14  \cf20 \strokec20 \{\cf14 \cb1 \strokec14 \
+\cb19       \cf18 \strokec18 setListOfUsers\cf14 \strokec14 (\cf22 \strokec22 response\cf20 \strokec20 .\cf22 \strokec22 data\cf14 \strokec14 )\cb1 \
+\cb19     \cf20 \strokec20 \}\cf14 \strokec14 )\cb1 \
+\cb19   \cf20 \strokec20 \},\cf14 \strokec14  [])\cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+49:33 Post request, send data from front-end to back-end\
+\
+52:34\
+We send some data to the back end through an object called body, In axios.post we need to send object. \
+\
+53:45\
+He is creating a different state for every input, in scrimba I learned to put it all in one state. \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf18 \cb19 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec18 onChange\cf25 \cb19 \strokec25 =\cf26 \strokec26 \{\cf20 \cb19 \strokec20 (\cf24 \cb19 \strokec24 event\cf20 \cb19 \strokec20 ) \cf21 \strokec21 =>\cf20 \strokec20  \{\cf14 \cb1 \strokec14 \
+\cf20 \cb19 \strokec20             \cf18 \strokec18 setName\cf20 \strokec20 (\cf22 \strokec22 event\cf20 \strokec20 .\cf22 \strokec22 target\cf20 \strokec20 .\cf22 \strokec22 value\cf20 \strokec20 )\cf14 \cb1 \strokec14 \
+\cf20 \cb19 \strokec20           \} \cf25 \cb19 \strokec25 />\cf14 \cb1 \strokec14 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Very common thing to do in react to get the value from an input. \
+\
+55:38\
+Whenever you have an object where the key is equal to a variable with the same name, \
+we dont need to :\
+name : name\
+we can just:\
+name \
+\
+56:59\
+Made a post request in React, everything crashed..\
+\
+\
+}
